@@ -1,0 +1,12 @@
+# Ignore Node.js dependencies
+my-shop-frontend/node_modules
+
+# Ignore build output
+my-shop-frontend/build
+
+# Ignore ASP.NET Core build output
+MyShopApi/bin
+MyShopApi/obj
+
+# Ignore environment files
+.env

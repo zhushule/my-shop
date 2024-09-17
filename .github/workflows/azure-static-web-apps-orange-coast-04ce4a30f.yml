@@ -26,6 +26,7 @@ jobs:
           node-version: "16" # Ensuring Node.js version 16 to match your local environment
 
       - name: Install dependencies
+        working-directory: ./my-shop-frontend # Set the working directory to the frontend folder
         run: npm install
 
       - name: Build And Deploy

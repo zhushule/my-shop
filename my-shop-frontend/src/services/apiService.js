@@ -1,27 +1,34 @@
 // src/services/apiService.js
+
 import axios from 'axios';
 
-// Base URL for the API should match the controller route in your backend
-const API_BASE_URL = '/api/example'; // Corrected base URL to match the ExampleController
+// Base URL of your backend API
+const BASE_URL = 'https://localhost:7229/products'; // Change this to your actual backend URL if different
 
-// Example function to fetch data from an API endpoint
-export const fetchExampleData = async () => {
-  try {
-    const response = await axios.get(`${API_BASE_URL}/example-endpoint`); // Matches the backend route
-    return response.data;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
-  }
+const apiService = {
+  // Fetch all products
+  getProducts: async () => {
+    try {
+      const response = await axios.get(BASE_URL);
+      return response.data; // Returns the array of products
+    } catch (error) {
+      console.error('Error fetching products:', error);
+      throw error; // Re-throw the error for handling in the component
+    }
+  },
+
+  // Fetch a product by ID
+  getProductById: async (id) => {
+    try {
+      const response = await axios.get(`${BASE_URL}/${id}`);
+      return response.data; // Returns the product object
+    } catch (error) {
+      console.error(`Error fetching product with ID ${id}:`, error);
+      throw error;
+    }
+  },
+
+  // Add more methods as needed for creating, updating, and deleting products...
 };
 
-// Example function to create a new item
-export const createExampleItem = async (data) => {
-  try {
-    const response = await axios.post(`${API_BASE_URL}/example-endpoint`, data); // Matches the backend route
-    return response.data;
-  } catch (error) {
-    console.error('Error creating item:', error);
-    throw error;
-  }
-};
+export default apiService;

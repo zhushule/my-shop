@@ -1,3 +1,4 @@
+// src/components/ProductList.js
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import ProductCard from './ProductCard';

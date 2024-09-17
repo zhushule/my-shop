@@ -1,6 +1,5 @@
-// src/components/ProductDetail.jsx
+// src/components/ProductDetail.js
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -8,14 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-const ProductDetail = ({ products, addToCart }) => {
-  const { id } = useParams(); // Get the product ID from the route parameters
-  const product = products.find((prod) => prod.id === parseInt(id)); // Find the product by ID
-
-  if (!product) {
-    return <Typography variant="h5">Product not found</Typography>;
-  }
-
+const ProductDetail = ({ product, addToCart }) => {
   return (
     <Grid container spacing={2} justifyContent="center">
       <Grid item xs={12} sm={8} md={6}>
@@ -23,7 +15,7 @@ const ProductDetail = ({ products, addToCart }) => {
           <CardMedia
             component="img"
             height="300"
-            image={product.image}
+            image={product.imageUrl}
             alt={product.name}
           />
           <CardContent>

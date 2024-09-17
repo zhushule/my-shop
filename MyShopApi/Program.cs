@@ -19,9 +19,27 @@ var connectionString = $"{builder.Configuration.GetConnectionString("DefaultConn
 builder.Services.AddDbContext<MyDbContext>(options =>
     options.UseSqlServer(connectionString));
 
+// Add CORS configuration
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        var frontendOrigin = builder.Environment.IsDevelopment()
+            ? "http://localhost:3000"  // Allow local development origin
+            : "https://orange-coast-04ce4a30f.5.azurestaticapps.net"; // Allow your Azure frontend URL
+
+        policy.WithOrigins(frontendOrigin)
+              .AllowAnyMethod()  // Allow any HTTP methods (GET, POST, PUT, DELETE, etc.)
+              .AllowAnyHeader(); // Allow any headers
+    });
+});
+
 builder.Services.AddControllers();
 
 var app = builder.Build();
+
+// Use the CORS policy
+app.UseCors("AllowReactApp");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -30,9 +48,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

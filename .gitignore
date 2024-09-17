@@ -61,4 +61,5 @@ crashlog*
 
 # Ignore environment files
 *.env
-*.env.*  # Ignores .env.development, .env.production, etc.
+*.env.*
+# Ignores .env.development, .env.production, etc.

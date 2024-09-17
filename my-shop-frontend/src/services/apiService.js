@@ -3,8 +3,9 @@
 import axios from 'axios';
 
 // Base URL of your backend API
-const BASE_URL = 'https://localhost:7229/api'; // Change this to your actual backend URL if different
-//const BASE_URL = 'https://myshopapi-backend-dyecfea4fka8cder.eastus2-01.azurewebsites.net'; // Replace this with your actual backend URL
+//const BASE_URL = 'https://localhost:7229/api'; // Change this to your actual backend URL if different
+//const BASE_URL = 'https://myshopapi-backend-dyecfea4fka8cder.eastus2-01.azurewebsites.net/api'; // Replace this with your actual backend URL
+const BASE_URL = process.env.REACT_APP_API_BASE_URL; 
 
 const apiService = {
   // Fetch all products

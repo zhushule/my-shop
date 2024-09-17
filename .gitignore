@@ -15,9 +15,6 @@ my-shop-frontend/yarn-error.log*
 MyShopApi/bin/
 MyShopApi/obj/
 
-# Ignore environment files
-.env
-
 # Ignore user-specific files
 MyShopApi/*.user
 MyShopApi/*.suo
@@ -61,3 +58,7 @@ MyShopApi/Migrations/*.Designer.cs
 
 # Ignore crash logs
 crashlog*
+
+# Ignore environment files
+*.env
+*.env.*  # Ignores .env.development, .env.production, etc.

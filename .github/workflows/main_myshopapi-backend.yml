@@ -47,9 +47,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dotnet-app
+          path: ./dotnet-app
       
       - name: Login to Azure
-        uses: azure/login@v2
+        uses: azure/login@v1
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_516A1DDCC00D4753A906D593FE53CD41 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_E58CB844676240D3AD1889E0B11C09AC }}
@@ -57,7 +58,7 @@ jobs:
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v3
+        uses: azure/webapps-deploy@v2
         with:
           app-name: 'myshopapi-backend'
           slot-name: 'Production'

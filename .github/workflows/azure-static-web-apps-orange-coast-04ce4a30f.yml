@@ -19,6 +19,15 @@ jobs:
         with:
           submodules: true
           lfs: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "16" # Ensuring Node.js version 16 to match your local environment
+
+      - name: Install dependencies
+        run: npm ci # Use npm ci to ensure exact versions and suppress warnings
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1

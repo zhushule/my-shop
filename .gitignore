@@ -1,12 +1,63 @@
 # Ignore Node.js dependencies
-my-shop-frontend/node_modules
+my-shop-frontend/node_modules/
 
-# Ignore build output
-my-shop-frontend/build
+# Ignore build output for frontend
+my-shop-frontend/build/
+my-shop-frontend/dist/
+
+# Ignore log files
+my-shop-frontend/logs/
+my-shop-frontend/npm-debug.log*
+my-shop-frontend/yarn-debug.log*
+my-shop-frontend/yarn-error.log*
 
 # Ignore ASP.NET Core build output
-MyShopApi/bin
-MyShopApi/obj
+MyShopApi/bin/
+MyShopApi/obj/
 
 # Ignore environment files
 .env
+
+# Ignore user-specific files
+MyShopApi/*.user
+MyShopApi/*.suo
+MyShopApi/*.userosscache
+MyShopApi/*.sln.docstates
+
+# Ignore IDE-specific files
+.vscode/
+.vs/
+.idea/
+
+# Ignore configuration files with sensitive information
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Production.json
+secrets.json
+
+# Ignore application insights and other local settings
+MyShopApi/appsettings.*.json
+
+# Ignore EF Core migration files containing secrets (if any)
+MyShopApi/Migrations/*.Designer.cs
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.log
+*.obj
+*.exe
+*.dll
+*.pdb
+*.pid
+*.gz
+*.class
+
+# Ignore build outputs and packages
+*.build/
+*.cache/
+*.publish/
+*.nuget/
+
+# Ignore crash logs
+crashlog*

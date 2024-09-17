@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace MyShopApi.Controllers
 {
     [ApiController]
-    [Route("products")]
+    [Route("api/products")] // Adjusted to use "api/products" for a clearer API structure
     public class ProductsController : ControllerBase
     {
         private readonly MyDbContext _context;
@@ -17,14 +17,14 @@ namespace MyShopApi.Controllers
             _context = context;
         }
 
-        // GET: /products
+        // GET: /api/products
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
             return await _context.Products.ToListAsync();
         }
 
-        // GET: /products/{id}
+        // GET: /api/products/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
@@ -38,7 +38,7 @@ namespace MyShopApi.Controllers
             return product;
         }
 
-        // POST: /products
+        // POST: /api/products
         [HttpPost]
         public async Task<ActionResult<Product>> CreateProduct(Product product)
         {
@@ -48,7 +48,7 @@ namespace MyShopApi.Controllers
             return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
         }
 
-        // PUT: /products/{id}
+        // PUT: /api/products/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProduct(int id, Product product)
         {
@@ -78,7 +78,7 @@ namespace MyShopApi.Controllers
             return NoContent();
         }
 
-        // DELETE: /products/{id}
+        // DELETE: /api/products/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {

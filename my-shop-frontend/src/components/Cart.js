@@ -1,4 +1,3 @@
-// src/components/Cart.js
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
@@ -54,4 +53,3 @@ const Cart = ({ cartItems, removeFromCart, updateQuantity }) => {
 };
 
 export default Cart;
-

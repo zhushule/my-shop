@@ -1,21 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Cart from '../components/Cart';
 
-const CartPage = () => {
-  const [cartItems, setCartItems] = useState([]);
-
-  const removeFromCart = (product) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== product.id));
-  };
-
-  const updateQuantity = (product, newQuantity) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === product.id ? { ...item, quantity: newQuantity } : item
-      )
-    );
-  };
-
+const CartPage = ({ cartItems, removeFromCart, updateQuantity }) => {
   return (
     <Cart
       cartItems={cartItems}

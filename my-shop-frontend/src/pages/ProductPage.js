@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ProductList from '../components/ProductList';
 import apiService from '../services/apiService';
 
-const ProductPage = () => {
+const ProductPage = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -25,7 +25,7 @@ const ProductPage = () => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
-  return <ProductList products={products} />;
+  return <ProductList products={products} addToCart={addToCart} />;
 };
 
 export default ProductPage;

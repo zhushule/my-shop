@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import ProductDetail from '../components/ProductDetail';
 import apiService from '../services/apiService';
 
-const ProductDetailPage = () => {
+const ProductDetailPage = ({ addToCart }) => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -28,7 +28,7 @@ const ProductDetailPage = () => {
   if (error) return <div>{error}</div>;
   if (!product) return <div>Product not found</div>;
 
-  return <ProductDetail product={product} />;
+  return <ProductDetail product={product} addToCart={addToCart} />;
 };
 
 export default ProductDetailPage;

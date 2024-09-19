@@ -1,4 +1,3 @@
-// src/components/ProductCard.js
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -8,7 +7,7 @@ import Button from '@mui/material/Button';
 import CardActions from '@mui/material/CardActions';
 import { Link } from 'react-router-dom';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, addToCart }) => {
   return (
     <Card>
       <CardMedia component="img" height="140" image={product.imageUrl} alt={product.name} />
@@ -32,6 +31,14 @@ const ProductCard = ({ product }) => {
           to={`/product/${product.id}`}
         >
           View Details
+        </Button>
+        <Button
+          size="small"
+          variant="contained"
+          color="primary"
+          onClick={() => addToCart(product)}
+        >
+          Add to Cart
         </Button>
       </CardActions>
     </Card>

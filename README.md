@@ -12,7 +12,7 @@ You can access the live version of this application at:
 
 **[My Shop Frontend - Live Demo](https://orange-coast-04ce4a30f.5.azurestaticapps.net)**  
 
-Sometime you getting "Failed to fetch prodcuts due to CORS policy please to refrash the webisite
+Sometime you getting "Failed to fetch products" due to CORS policy please to refresh the website
 
 ## Features
 

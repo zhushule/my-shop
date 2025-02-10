@@ -4,16 +4,6 @@
 
 **My Shop** is a full-stack e-commerce web application where users can browse products, view product details, and add products to the shopping cart. The frontend is built with React and Material-UI, and the backend is built with ASP.NET Core. The application is integrated with Azure SQL for database management and Azure Blob Storage for storing product images.
 
-# My Shop - Full Stack Application
-
-## Live Demo
-
-You can access the live version of this application at:
-
-**[My Shop Frontend - Live Demo](https://orange-coast-04ce4a30f.5.azurestaticapps.net)**  
-
-Sometime you getting "Failed to fetch products" due to CORS policy please to refresh the website
-
 ## Features
 
 - Browse products on the homepage.
